@@ -9,6 +9,9 @@ function load_dotenv
         echo "Loading $dotenv_path"
 
         while read -l line
+            if test (string sub -l 1 $line) = "#"
+                continue
+            end
             set -l pair (string split -m1 '=' $line)
             if test (count $pair) -eq 2
                 set -gx $pair[1] $pair[2]
