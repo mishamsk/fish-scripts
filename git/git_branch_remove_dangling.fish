@@ -1,5 +1,5 @@
 # Based on https://stackoverflow.com/a/22687460/4334071
-function git_branch_remove_dandling -d "Remove local branches that have been deleted on the remote"
+function git_branch_remove_dangling -d "Remove local branches that have been deleted on the remote"
 
     # Update remote refs
     git fetch origin --prune
