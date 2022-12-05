@@ -7,6 +7,9 @@ function git_branch_remove_dangling -d "Remove local branches that have been del
     # Switch to main branch
     git switch main
 
+    # Pull latest changes
+    git pull
+
     # Get list of local branches and remote branches
     set REMOTE_BRANCHES (git for-each-ref --format="%(refname)" refs/remotes/origin/ | sed 's#^refs/remotes/origin/##')
     set LOCAL_BRANCHES (git for-each-ref --format="%(refname)" refs/heads/ | sed 's#^refs/heads/##')
